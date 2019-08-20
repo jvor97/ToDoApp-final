@@ -54,7 +54,8 @@ public class ToDoListController {
 		
 		// we will use our own current date in todo, not the one from json request
 		LocalDateTime now = LocalDateTime.now();
-		String prettyDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(now);
+//		String prettyDateTime = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(now);
+		String prettyDateTime= DateTimeFormatter.ISO_DATE_TIME.format(now);
 		request.setCreatedAt(prettyDateTime);
 		
 		// generate unique ID for each todo item
