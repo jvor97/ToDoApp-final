@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Masonry from 'react-masonry-component';
+import Masonry from "react-masonry-component";
 
 import Todo from "../components/Todo";
 
 class TodoList extends Component {
   render() {
     const todos = this.props.todos;
-    
+
     return (
       <Masonry className="todos">
-        {todos.map((todoData) => {
+        {todos.map(todoData => {
           const handleFinishTodo = () => {
             todoData.finished = true;
             this.props.onEdit(todoData);
@@ -32,5 +32,7 @@ class TodoList extends Component {
     );
   }
 }
+
+// this.props.todo == todoData ,,, this.props.key == tododata.id
 
 export default TodoList;

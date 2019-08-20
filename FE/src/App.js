@@ -26,7 +26,7 @@ class App extends Component {
     const newTodo = {
       ...todo,
       finished: false,
-      createdAt: moment().format("DD.MM.YYYY")
+      createdAt: moment().format()
     };
     const result = await axios.post("/todos", newTodo);
     newTodo.id = result.data;
@@ -38,8 +38,8 @@ class App extends Component {
     });
   };
 
-  editTodo = (todo) => {
-    const index = findIndex(this.state.todos, { id: todo.id })
+  editTodo = todo => {
+    const index = findIndex(this.state.todos, { id: todo.id });
     const todos = [...this.state.todos];
     todos.splice(index, 1, todo);
     this.setState({
@@ -47,8 +47,8 @@ class App extends Component {
     });
   };
 
-  removeTodo = (todo) => {
-    const index = findIndex(this.state.todos, { id: todo.id })
+  removeTodo = todo => {
+    const index = findIndex(this.state.todos, { id: todo.id });
     const todos = [...this.state.todos];
     todos.splice(index, 1);
     this.setState({
@@ -64,23 +64,23 @@ class App extends Component {
           <Navbar />
 
           <div className="p-3">
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={() => (
-                <TodoList
-                  todos={todos}
-                  onEdit={this.editTodo}
-                  onRemove={this.removeTodo}
-                />
-              )}
-            />
-            <Route
-              path="/add"
-              render={() => <AddTodo onAdd={this.addTodo} />}
-            />
-          </Switch>
+            <Switch>
+              <Route
+                path="/"
+                exact
+                render={() => (
+                  <TodoList
+                    todos={todos}
+                    onEdit={this.editTodo}
+                    onRemove={this.removeTodo}
+                  />
+                )}
+              />
+              <Route
+                path="/add"
+                render={() => <AddTodo onAdd={this.addTodo} />}
+              />
+            </Switch>
           </div>
         </div>
       </HashRouter>

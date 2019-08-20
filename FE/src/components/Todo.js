@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "../axios";
 
 import TodoButtons from "./TodoButtons";
+import moment from "moment";
 
 class Todo extends Component {
   renderText = () => {
@@ -28,6 +29,7 @@ class Todo extends Component {
 
   render() {
     const { createdAt, title, finished } = this.props.todo;
+    let formatedCreatedAt = moment(createdAt).format("hh:mm:ss DD. MMMM YYYY");
     let classes = "card";
     if (finished) classes += " border-success";
 
@@ -37,7 +39,7 @@ class Todo extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <h6 className="card-subtitle text-muted mb-2">
-              Created at {createdAt}
+              Created at {formatedCreatedAt}
             </h6>
             {this.renderText()}
             <TodoButtons
