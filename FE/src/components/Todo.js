@@ -30,14 +30,27 @@ class Todo extends Component {
   render() {
     const { createdAt, title, finished } = this.props.todo;
     let formatedCreatedAt = moment(createdAt).format("hh:mm:ss DD. MMMM YYYY");
+    let currentTime = moment();
+    let timeDifference = currentTime.diff(createdAt, "minutes") <= 10;
     let classes = "card";
     if (finished) classes += " border-success";
+    // function displayBadge(props) {
+    //   return <span className="badge badge-danger ml-2">New</span>;
+    // }
+    function Badge(props) {
+      if (timeDifference && !finished) {
+        return <span className="badge badge-danger ml-2">New</span>;
+      }
+    }
 
     return (
       <div className="todo mb-2">
         <div className={classes}>
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
+            <h5 className="card-title">
+              {title}
+              {Badge()}
+            </h5>
             <h6 className="card-subtitle text-muted mb-2">
               Created at {formatedCreatedAt}
             </h6>
