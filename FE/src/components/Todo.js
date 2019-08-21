@@ -29,14 +29,17 @@ class Todo extends Component {
 
   render() {
     const { createdAt, title, finished } = this.props.todo;
+
     let formatedCreatedAt = moment(createdAt).format("hh:mm:ss DD. MMMM YYYY");
     let currentTime = moment();
     let timeDifference = currentTime.diff(createdAt, "minutes") <= 10;
     let classes = "card";
-    if (finished) classes += " border-success";
-    // function displayBadge(props) {
-    //   return <span className="badge badge-danger ml-2">New</span>;
-    // }
+    let borderColor = finished ? "red" : "green";
+    let borderStyle = {
+      borderTopWidth: 5,
+      borderTopColor: borderColor
+    };
+
     function Badge(props) {
       if (timeDifference && !finished) {
         return <span className="badge badge-danger ml-2">New</span>;
@@ -45,7 +48,7 @@ class Todo extends Component {
 
     return (
       <div className="todo mb-2">
-        <div className={classes}>
+        <div className={classes} style={borderStyle}>
           <div className="card-body">
             <h5 className="card-title">
               {title}
