@@ -10,10 +10,20 @@
 
 .checkmark {
   position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 0;
+  right: 0;
 }
 
 .checkmark:hover {
   color: green;
+}
+
+.closemark {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.closemark:hover {
+  color: red;
 }

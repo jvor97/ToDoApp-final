@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { IoIosCheckmark } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 
 class TodoButtons extends Component {
   render() {
@@ -19,13 +20,12 @@ class TodoButtons extends Component {
 
     return (
       <>
-        <button
-          type="button"
-          className="btn btn-light"
+        <IoIosClose
+          className="closemark"
           onClick={this.props.onRemove}
-        >
-          Zmazať
-        </button>
+          size={40}
+        />
+
         {finishButton}
       </>
     );
