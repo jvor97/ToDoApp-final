@@ -7,3 +7,13 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.checkmark {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.checkmark:hover {
+  color: green;
+}
