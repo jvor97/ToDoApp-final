@@ -54,7 +54,7 @@ class Todo extends Component {
               {title}
               {Badge()}
             </h5>
-            <h6 className="card-subtitle text-muted mb-2">
+            <h6 className="card-subtitle text-muted mb-2 createdAt">
               Created at {formatedCreatedAt}
             </h6>
             {this.renderText()}

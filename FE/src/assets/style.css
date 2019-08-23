@@ -8,10 +8,19 @@
   margin-right: 10px;
 }
 
+.card-title {
+  padding-bottom: 0.7rem;
+}
+
+.createdAt {
+  font-size: 70%;
+}
+
 .checkmark {
   position: absolute;
   bottom: 0;
   right: 0;
+  color: gray;
 }
 
 .checkmark:hover {
@@ -22,8 +31,24 @@
   position: absolute;
   top: 0;
   right: 0;
+  color: gray;
 }
 
 .closemark:hover {
-  color: red;
+  color: #525252;
+}
+
+.add-tab {
+  text-align: center;
+  padding: 2.8rem;
+  color: gray;
+  border-style: dashed;
+}
+
+.plus-icon {
+  margin: auto;
+  color: gray;
+}
+.plus-icon:hover {
+  color: #525252;
 }
