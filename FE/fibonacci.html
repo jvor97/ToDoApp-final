@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1+1 = 2     number1 + number2 = number3
+      //1+2 = 3     number1 == number2 && number2 == number3
+      //2+3 = 5
+      function fibonacci() {
+        let times = [];
+        let n1 = 1;
+        let n2 = 1;
+        let n3 = 2;
+        for (let i = 1; i < 10; i++) {
+          times.push(i);
+
+          n3 = n1 + n2;
+          console.log(n3 + "=" + n1 + "+" + n2);
+          n1 = n2;
+          n2 = n3;
+        }
+      }
+      fibonacci();
+
+      /*
+      Create method for calculating fibonacci numbers. This method has one parameter and returns
+      fibonacci number for that parameter.
+      for example:
+      Fibonacci(3) => returns 2
+      Fibonacci(4) => returns 3
+      Fibonacci(9) => returns 34
+      Fibonacci(14) => returns 377
+       */
+
+      function fibonacci1(number) {
+        let n1 = 1;
+        let n2 = 1;
+        let n3 = 2;
+        let arr = [1, 1];
+        // console.log(n1);
+        // console.log(n2);
+        for (let i = 0; i < number; i++) {
+          n3 = n1 + n2;
+          //   console.log(n3);
+          arr.push(n3);
+          n1 = n2;
+          n2 = n3;
+        }
+        return arr[number - 1];
+      }
+      console.log(fibonacci1(14));
+    </script>
+  </body>
+</html>
