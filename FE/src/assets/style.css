@@ -47,8 +47,9 @@
 
 .plus-icon {
   margin: auto;
-  color: gray;
 }
-.plus-icon:hover {
+
+.add-tab:hover {
   color: #525252;
+  text-decoration: none;
 }

@@ -11,7 +11,7 @@ class TodoList extends Component {
 
     return (
       <Masonry className="todos">
-        <div className="todo mb-2">
+        <div className="todo mb-2 ">
           <Link className="card add-tab card" to="/add">
             <GoPlus className="plus-icon" />
             Add todo
